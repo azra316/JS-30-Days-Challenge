@@ -133,3 +133,4 @@ package-lock.json
 package.json
 replit.nix
 .replit
+.breakpoints
