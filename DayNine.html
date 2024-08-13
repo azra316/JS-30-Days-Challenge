@@ -5,6 +5,125 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Day-9: DOM Manipulation</title>
+    <style>
+    /* General Styling */
+    body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    }
+
+    /* Headings Styling */
+    h1 {
+    color: #4CAF50;
+    font-size: 2em;
+    text-align: center;
+    margin-bottom: 20px;
+    }
+
+    h2 {
+    color: #333;
+    background-color: #f4f4f4;
+    text-align: center;
+    padding: 10px;
+    border-radius: 5px;
+    }
+
+    /* Task 3: New Element Styling */
+    div {
+    margin-top: 20px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #fff;
+    }
+
+    /* Task 4: List Styling */
+    ul {
+    list-style-type: square;
+    padding-left: 20px;
+    }
+
+    li {
+    margin-bottom: 5px;
+    }
+
+    /* Task 5 & Task 6: Remove Element Styling */
+    #task-5,
+    #task-6 {
+    margin-top: 10px;
+    }
+
+    #task-6 p {
+    margin: 5px 0;
+    }
+
+    /* Task 7: Link Styling */
+    a {
+    color: #0066cc;
+    text-decoration: none;
+    }
+
+    a:hover {
+    text-decoration: underline;
+    }
+
+    /* Task 8: Adding and Removing Class */
+    .Box {
+    padding: 10px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    }
+
+    .container {
+    border: 2px solid #4CAF50;
+    padding: 20px;
+    border-radius: 10px;
+    }
+
+    .MyDive {
+    background-color: #f4f4f4;
+    color: #333;
+    font-size: 1.1em;
+    }
+
+    /* Task 9: Event Handling */
+    #Task-9-Container {
+    text-align: center;
+    margin-top: 20px;
+    }
+
+    #task-9-btn {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    }
+
+    #task-9-btn:hover {
+    background-color: #45a049;
+    }
+
+    #task-9-para {
+    margin-top: 10px;
+    }
+
+    /* Task 10: Mouseover Styling */
+    #task-10-Container {
+    margin-top: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    border-radius: 5px;
+    }
+
+    #task-10-Container:hover {
+    border-color: red;
+    }
+    </style>
 </head>
 
 <body>
@@ -28,15 +147,33 @@
 
     <!-- Activity 3: Removing Elements -->
     <!-- Task 5: Select an HTML element and remove it from the DOM. -->
-     <div id="task-5">I will remove through DOM</div>
+    <div id="task-5">I will remove through DOM</div>
 
-     <!-- Task 6: Remove the last child of a specific HTML element. -->
-      <div id="task-6">
+    <!-- Task 6: Remove the last child of a specific HTML element. -->
+    <div id="task-6">
         <p>Child-one</p>
         <p>Child-two</p>
         <p>Child-three</p>
-      </div>
-     
+    </div>
+
+    <!-- Activity 4: Modifying Attributes and Classes -->
+    <!-- Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag). -->
+    <a href="https://mail.google.com/mail/u/0/#inbox" target="_blank" id="MyLink">go to Mail</a>
+    <!-- Task 8: Add and remove a CSS class to/from an HTML element. -->
+    <div id="task-8" class="Box">This is a div where CSS class will add and remove through DOM</div>
+
+    <!-- Activity 5: Event Handling -->
+    <!-- Task 9: Add a click event listener to a button that changes the text content of a paragraph. -->
+    <div id="Task-9-Container">
+        <p id="task-9-para">I will Change MY cotent if You will click on the button</p>
+        <button id="task-9-btn">Cick</button>
+    </div>
+
+    <!-- Task 10: Add a mouseover event listener to an element that changes its border color. -->
+    <div id="task-10-Container" style="text-align: center;  border: 2px solid black;">
+        <p id="task-10">hey My border color will change Ta-Da!!</p>
+    </div>
+
 
     <!--JavaScript -->
     <script>
@@ -67,7 +204,31 @@
 
         // Task 6: Remove the last child of a specific HTML element.
         document.querySelector('#task-6 p:nth-child(3)').remove();
-        
+
+        // Activity 4: Modifying Attributes and Classes
+        //   Task 7: Select an HTML element and change one of its attributes (e.g., src of an img tag).
+        const Mylink = document.getElementById("MyLink");
+        Mylink.setAttribute('href', 'https://github.com/azra316');
+
+        //   Task 8: Add and remove a CSS class to/from an HTML element.
+        const MyClass = document.getElementById("task-8");
+        MyClass.classList.add('container', "MyDive");
+        MyClass.classList.remove('Box');
+
+        // Activity 5: Event Handling
+        // Task 9: Add a click event listener to a button that changes the text content of a paragraph.
+        const SelectBtn = document.getElementById('task-9-btn');
+        SelectBtn.addEventListener("click", function () {
+            document.getElementById('task-9-para').textContent = "Hey I'm Task-9 Paragraph";
+        });
+
+        //Task 10: Add a mouseover event listener to an element that changes its border color.
+        const TaskNine = document.getElementById('task-10-Container');
+        TaskNine.addEventListener("mouseover", function () {
+            TaskNine.style.borderColor = "red";
+        })
+
+
 
 
 
