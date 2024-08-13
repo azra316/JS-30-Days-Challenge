@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Day-9: DOM Manipulation</title>
+</head>
+
+<body>
+    <!-- Activity 1: Selecting and Manipulating Elements -->
+    <!-- Task 1: Select an HTML element by its ID and change its text content. -->
+    <h1 id="task-1">Day-9: JS Challenge</h1>
+    <!-- Task 2: Select an HTML element by its class and change its background color. -->
+    <h2 class="ChallengeTopic">Todays Challenge is DOM Manipulation</h2>
+
+    <!-- Activity 2: Creating and Appending Elements -->
+    <!-- Task 3: Create a new div element with some text content and append it to the body. -->
+    <!-- Task-3 Element will append here -->
+
+    <!-- Task 4: Create a new li element and add it to an existing ul list. -->
+    <Ul id="task-4">
+        <li>Apple</li>
+        <li>Bnana</li>
+        <li>Mango</li>
+        <!-- Task-4 Element will append here -->
+    </Ul>
+
+    <!-- Activity 3: Removing Elements -->
+    <!-- Task 5: Select an HTML element and remove it from the DOM. -->
+     <div id="task-5">I will remove through DOM</div>
+
+     <!-- Task 6: Remove the last child of a specific HTML element. -->
+      <div id="task-6">
+        <p>Child-one</p>
+        <p>Child-two</p>
+        <p>Child-three</p>
+      </div>
+     
+
+    <!--JavaScript -->
+    <script>
+        // Activity 1: Selecting and Manipulating Elements.
+        // Task 1: Select an HTML element by its ID and change its text content.
+        const TaskOne = document.getElementById('task-1');
+        TaskOne.innerText = "I am doing Day-9 Challenge";
+
+        // Task 2: Select an HTML element by its class and change its background color.
+        document.querySelector(".ChallengeTopic").style.backgroundColor = "olive";
+
+        // Activity 2: Creating and Appending Elements 
+        //  Task 3: Create a new div element with some text content and append it to the body. 
+        const Body = document.querySelector('body');
+        const NewElement = document.createElement('div');
+        NewElement.textContent = " I'm a new Element Appended by JS";
+        Body.append(NewElement);
+
+        // Task 4: Create a new li element and add it to an existing ul list.
+        const SelectList = document.getElementById('task-4');
+        const Newli = document.createElement('li');
+        Newli.textContent = "Avocado";
+        SelectList.appendChild(Newli);
+
+        // Activity 3: Removing Elements 
+        //  Task 5: Select an HTML element and remove it from the DOM.
+        document.getElementById('task-5').remove();
+
+        // Task 6: Remove the last child of a specific HTML element.
+        document.querySelector('#task-6 p:nth-child(3)').remove();
+        
+
+
+
+
+    </script>
+</body>
+
+</html>
